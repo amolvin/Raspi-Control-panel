@@ -1,0 +1,94 @@
+body{
+	background: #333333;
+}
+
+button{
+	width: 11em;
+	height: 3em;
+	cursor: pointer;
+	text-shadow: 1px 1px 1px #CCCCCC;
+}
+
+div#container{
+	width: 50em;
+	height: 26.5em;
+	margin: 50px auto 10px auto;
+	background: #FFFFFF;
+	border-radius: 10px;
+	box-shadow: 1px 1px 5px #000000;
+}
+
+div#container img#logo{
+	position: relative;
+	top: -2.5em;
+	width: 128px;
+}
+
+div#container img#loader{
+	position: relative;
+	left: 20em;
+}
+
+div#container p.action{
+	display: block;
+	text-align: center;
+	font-size: 1.5em;
+	text-shadow: 1px 1px 2px #000000;
+}
+
+div#container div#title{
+	float: right;
+	font-family: sans;
+	font-size: 2em;
+	font-weight: bold;
+	text-shadow: 1px 1px 2px #000000;
+	margin: 1em 3em 1em 0em;
+	border-bottom: 1px solid #CCCCCC;
+}
+
+div#container div#tempgauge{
+	position: relative;
+	left: -10em;
+	height: 18em;
+}
+
+div#container div#voltgauge{
+	position: relative;
+	left: 6em;
+	top: -16.5em;
+	height: 8em;
+}
+
+div#container div#clockgauge{
+	position: relative;
+	left: 6em;
+	top: -17em;
+	height: 8em;
+}
+
+div#container div#cpugauge{
+	position: relative;
+	left: 18em;
+	top: -32.5em;
+	height: 8em;
+}
+
+div#container div#controls{
+	position: relative;
+	top: -30em;
+	left: -2.9em;
+	float: right;
+	text-align: center;
+}
+
+div#container div#copy{
+	position: relative;
+	top: -42em;
+	left: 8.2em;
+	float: right;
+	color: #000000;
+	text-shadow: 1px 1px 2px #000000;
+	font-family: sans;
+	font-size: 0.6em;
+}
+
