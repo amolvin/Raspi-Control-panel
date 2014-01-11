@@ -47,6 +47,14 @@ div#container div#title{
 	border-bottom: 1px solid #CCCCCC;
 }
 
+div#container div#uptime{
+	display: block;
+	text-align: right;
+	padding: 0px 50px;
+	font-family: sans;
+
+}
+
 div#container div#tempgauge{
 	position: relative;
 	left: -10em;

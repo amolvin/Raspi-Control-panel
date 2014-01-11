@@ -11,6 +11,9 @@
 	$voltage = substr($voltage,0,-2);
 
 	$cpuusage = 100 - shell_exec("vmstat | tail -1 | awk '{print $15}'");
+
+	$uptime = shell_exec("uptime | awk {'print $3'}");
+	$uptime = substr($uptime, 0, -2);
 ?>
 
 <!DOCTYPE html>
@@ -53,6 +56,7 @@
 		<div id="container">
 				<img id="logo" src="images/raspberry.png">
 				<div id="title">Raspberry Pi Control Panel</div>
+				<div id="uptime"><b>Laufzeit:</b>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $uptime; ?></div>
 				<div id="tempgauge"></div>
 				<div id="voltgauge"></div>
 				<div id="clockgauge"></div>
