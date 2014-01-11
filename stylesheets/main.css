@@ -1,5 +1,6 @@
 body{
 	background: #333333;
+	overflow: hidden;
 }
 
 button{
@@ -79,16 +80,5 @@ div#container div#controls{
 	left: -2.9em;
 	float: right;
 	text-align: center;
-}
-
-div#container div#copy{
-	position: relative;
-	top: -42em;
-	left: 8.2em;
-	float: right;
-	color: #000000;
-	text-shadow: 1px 1px 2px #000000;
-	font-family: sans;
-	font-size: 0.6em;
 }
 

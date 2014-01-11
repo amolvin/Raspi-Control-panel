@@ -61,7 +61,6 @@
 					<a href="modules/shutdown.php?action=0" onclick="return checkAction('neu starten');"><button STYLE="color: #FB8500;">Neustarten</button></a><br/>
 					<a href="modules/shutdown.php?action=1" onclick="return checkAction('herunterfahren');"><button STYLE="color: #FF0000;">Herunterfahren</button></a>
 				</div>
-				<div id="copy"><?php echo date("Y") ?> - Sebastian Baldauf</div>
 		</div>
 
 
