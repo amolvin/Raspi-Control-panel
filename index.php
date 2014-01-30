@@ -1,4 +1,9 @@
 <?php
+
+	define(LANGUAGE, "english");
+
+	include 'localization/'.LANGUAGE.'.lang.php';
+
 	$temp = shell_exec('cat /sys/class/thermal/thermal_zone*/temp');
 	$temp = round($temp / 1000, 1);
 
@@ -31,7 +36,7 @@
 
 	    <script>
 	    	function checkAction(action){
-				if (confirm('Wollen Sie das System wirklich ' + action + '?'))
+				if (confirm('<?php echo TXT_CONFIRM; ?> ' + action + '?'))
 				{
 					return true;
 				}
@@ -59,14 +64,14 @@
 		<div id="container">
 				<img id="logo" src="images/raspberry.png">
 				<div id="title">Raspberry Pi Control Panel</div>
-				<div id="uptime"><b>Laufzeit:</b>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $uptime." h"; ?></div>
+				<div id="uptime"><b><?php echo TXT_RUNTIME; ?></b>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $uptime." h"; ?></div>
 				<div id="tempgauge"></div>
 				<div id="voltgauge"></div>
 				<div id="clockgauge"></div>
 				<div id="cpugauge"></div>
 				<div id="controls">
-					<a class="button_orange" href="modules/shutdown.php?action=0" onclick="return checkAction('neu starten');">Neustarten</a><br/>
-					<a class="button_red" href="modules/shutdown.php?action=1" onclick="return checkAction('herunterfahren');">Herunterfahren</a>
+					<a class="button_orange" href="modules/shutdown.php?action=0" onclick="return checkAction('<?php echo TXT_RESTART_1; ?>');"><?php echo TXT_RESTART_2; ?></a><br/>
+					<a class="button_red" href="modules/shutdown.php?action=1" onclick="return checkAction('<?php echo TXT_SHUTDOWN_1; ?>');"><?php echo TXT_SHUTDOWN_2; ?></a>
 				</div>
 		</div>
 
@@ -77,7 +82,7 @@
 		    value: <?php echo $temp; ?>,
 		    min: 0,
 		    max: 100,
-		    title: "Temperatur",
+		    title: "<?php echo TXT_TEMPERATURE; ?>",
 		    label: "°C"
 		    });
 
@@ -86,8 +91,8 @@
 		    value: <?php echo $voltage; ?>,
 		    min: 0.8,
 		    max: 1.4,
-		    title: "Spannung",
-		    label: "Volt"
+		    title: "<?php echo TXT_VOLTAGE; ?>",
+		    label: "V"
 		    });
 
 		    var c = new JustGage({
@@ -95,7 +100,7 @@
 		    value: <?php echo $clock; ?>,
 		    min: 0,
 		    max: 1000,
-		    title: "Takt",
+		    title: "<?php echo TXT_CLOCK; ?>",
 		    label: "MHz"
 		    });
 
@@ -104,8 +109,8 @@
 		    value: <?php echo $cpuusage; ?>,
 		    min: 0,
 		    max: 100,
-		    title: "Prozessor Auslastung",
-		    label: "Prozent"
+		    title: "<?php echo TXT_USAGE; ?>",
+		    label: "%"
 		    });
 	    </script>
 	</body>
