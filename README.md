@@ -3,7 +3,8 @@ Raspberry Pi Control Panel
 
 The Raspberry Pi Control Panel is designed to give you a fast overview of your Raspberry Pi.
 
-It was originally programmed to fit my needs, so if you need something else, you are free to add it yourself.
+It was originally programmed to fit my needs, so if you need something else, you are free to add it yourself. I use it on RaspBMC,
+i haven't testet it, but it should work on all other Raspbian/Debian based distributions.
 
 Tech
 -----------
