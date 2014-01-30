@@ -6,9 +6,21 @@ The Raspberry Pi Control Panel is designed to give you a fast overview of your R
 It was originally programmed to fit my needs, so if you need something else, you are free to add it yourself. I use it on RaspBMC,
 i haven't testet it, but it should work on all other Raspbian/Debian based distributions.
 
-Localizations can be created by adding files to ./localization/langugage.lang.php and editing index.php by chaning *define(LANGUAGE, "english");* to your languagefile.
+Localizations can be created by adding files to
+```
+./localization/langugage.lang.php
+```
 
-![alt tag](http://i.imgur.com/sd2MS0W.png)
+and editing *index.php* by changing
+
+```
+define(LANGUAGE, "english");
+```
+to your languagefile.
+
+**Preview:**
+
+![alt tag](http://i.imgur.com/kxLWoH7.png)
 
 Tech
 -----------
@@ -21,9 +33,9 @@ Raspberry Pi Control Panel includes some libraries. Libraries used are:
 Installation
 --------------
 
-You need to have a Webserver up and running on your Raspberry Pi. lighttpd, Apache2 have been testet, but i think others will do just fine. You need to have PHP enabled and be able to execute shell_exec commmands.
+You need to have a Webserver up and running on your Raspberry Pi. lighttpd, Apache2 have been testet, but i think others will do just fine. You need to have PHP enabled and be able to execute *shell_exec()* commmands.
 
-For the reboot and shutdown buttons to work, you need to adjust your /etc/sudoers file by using 
+For the reboot and shutdown buttons to work, you need to adjust your /etc/sudoers file by using
 ```sh
 sudo visudo
 ```
@@ -43,4 +55,4 @@ nada - do whatever you want. This was made quick and dirty, what means that this
 [Raphaël]:http://raphaeljs.com/
 
 
-    
+

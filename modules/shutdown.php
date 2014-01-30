@@ -21,8 +21,8 @@
 					<head>
 						<meta charset="utf-8">
 						<meta http-equiv="X-UA-Compatible" content="IE=edge">
-						<meta http-equiv="refresh" content="45; URL=../index.php">
-						<title>Raspberry Pi Control Panel - Neustart</title>
+						<meta http-equiv="refresh" content="50; URL=../index.php">
+						<title>Raspberry Pi Control Panel</title>
 						<link rel="stylesheet" href="../stylesheets/main.css">
 					</head>
 
@@ -30,7 +30,7 @@
 						<div id="container">
 							<img id="logo" src="../images/raspberry.png">
 							<div id="title">Raspberry Pi Control Panel</div>
-							<p class="action">Das System wird nun neu gestartet...</p>
+							<p class="action">Raspberry Pi is now rebooting...</p>
 							<img id="loader" src="../images/reboot.gif">
 						</div>
 					</body>
@@ -48,8 +48,8 @@
 					<head>
 						<meta charset="utf-8">
 						<meta http-equiv="X-UA-Compatible" content="IE=edge">
-						<meta http-equiv="refresh" content="10; URL=../index.php">
-						<title>Raspberry Pi Control Panel - Neustart</title>
+						<meta http-equiv="refresh" content="20; URL=../index.php">
+						<title>Raspberry Pi Control Panel</title>
 						<link rel="stylesheet" href="../stylesheets/main.css">
 					</head>
 
@@ -57,7 +57,7 @@
 						<div id="container">
 							<img id="logo" src="../images/raspberry.png">
 							<div id="title">Raspberry Pi Control Panel</div>
-							<p class="action" STYLE="color: #FF0000;">Das System wird nun heruntergefahren...</p>
+							<p class="action" STYLE="color: #FF0000;">Raspberry Pi is now shutting down...</p>
 							<img id="loader" src="../images/shutdown.gif">
 						</div>
 					</body>
