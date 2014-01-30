@@ -14,6 +14,8 @@
 
 	$uptime = shell_exec("uptime | awk {'print $3'}");
 	$uptime = substr($uptime, 0, -2);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -23,6 +25,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>Raspberry Pi Control Panel</title>
 		<link rel="stylesheet" href="stylesheets/main.css">
+		<link rel="stylesheet" href="stylesheets/button.css">
 		<script src="javascript/raphael.2.1.0.min.js"></script>
 	    <script src="javascript/justgage.1.0.1.min.js"></script>
 
@@ -56,14 +59,14 @@
 		<div id="container">
 				<img id="logo" src="images/raspberry.png">
 				<div id="title">Raspberry Pi Control Panel</div>
-				<div id="uptime"><b>Laufzeit:</b>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $uptime; ?></div>
+				<div id="uptime"><b>Laufzeit:</b>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $uptime." h"; ?></div>
 				<div id="tempgauge"></div>
 				<div id="voltgauge"></div>
 				<div id="clockgauge"></div>
 				<div id="cpugauge"></div>
 				<div id="controls">
-					<a href="modules/shutdown.php?action=0" onclick="return checkAction('neu starten');"><button STYLE="color: #FB8500;">Neustarten</button></a><br/>
-					<a href="modules/shutdown.php?action=1" onclick="return checkAction('herunterfahren');"><button STYLE="color: #FF0000;">Herunterfahren</button></a>
+					<a class="button_orange" href="modules/shutdown.php?action=0" onclick="return checkAction('neu starten');">Neustarten</a><br/>
+					<a class="button_red" href="modules/shutdown.php?action=1" onclick="return checkAction('herunterfahren');">Herunterfahren</a>
 				</div>
 		</div>
 
