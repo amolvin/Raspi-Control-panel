@@ -1,6 +1,6 @@
 <?php
 
-	define(LANGUAGE, "english");
+	define(LANGUAGE, "german");
 
 	include 'localization/'.LANGUAGE.'.lang.php';
 
@@ -17,8 +17,10 @@
 
 	$cpuusage = 100 - shell_exec("vmstat | tail -1 | awk '{print $15}'");
 
-	$uptime = shell_exec("uptime | awk {'print $3'}");
-	$uptime = substr($uptime, 0, -2);
+	$uptimedata = shell_exec('uptime');
+	$uptime = explode(' up ', $uptimedata);
+	$uptime = explode(',', $uptime[1]);
+	$uptime = $uptime[0].', '.$uptime[1];
 
 
 ?>
