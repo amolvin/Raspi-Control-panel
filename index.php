@@ -1,6 +1,6 @@
 <?php
 
-	define(LANGUAGE, "german");
+	define(LANGUAGE, "english");
 
 
 	$temp = shell_exec('cat /sys/class/thermal/thermal_zone*/temp');
