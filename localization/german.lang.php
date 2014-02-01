@@ -11,4 +11,7 @@
 	define(TXT_CLOCK, "Takt");
 	define(TXT_USAGE, "Prozessorauslastung");
 
+	$uptime = preg_replace('/day\b/i','Tag',$uptime);
+	$uptime = preg_replace('/days\b/i','Tage',$uptime);
+
 ?>

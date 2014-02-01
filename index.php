@@ -2,7 +2,6 @@
 
 	define(LANGUAGE, "german");
 
-	include 'localization/'.LANGUAGE.'.lang.php';
 
 	$temp = shell_exec('cat /sys/class/thermal/thermal_zone*/temp');
 	$temp = round($temp / 1000, 1);
@@ -22,7 +21,7 @@
 	$uptime = explode(',', $uptime[1]);
 	$uptime = $uptime[0].', '.$uptime[1];
 
-
+	include 'localization/'.LANGUAGE.'.lang.php';
 ?>
 
 <!DOCTYPE html>
@@ -66,7 +65,7 @@
 		<div id="container">
 				<img id="logo" src="images/raspberry.png">
 				<div id="title">Raspberry Pi Control Panel</div>
-				<div id="uptime"><b><?php echo TXT_RUNTIME; ?></b>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $uptime." h"; ?></div>
+				<div id="uptime"><b><?php echo TXT_RUNTIME; ?></b>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $uptime; ?></div>
 				<div id="tempgauge"></div>
 				<div id="voltgauge"></div>
 				<div id="clockgauge"></div>
