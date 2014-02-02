@@ -1,4 +1,5 @@
 <?php
+	ob_start();
 
 	define(LANGUAGE, "english");
 
@@ -65,7 +66,7 @@
 		<div id="container">
 				<img id="logo" src="images/raspberry.png">
 				<div id="title">Raspberry Pi Control Panel</div>
-				<div id="uptime"><b><?php echo TXT_RUNTIME; ?></b>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $uptime; ?></div>
+				<div id="uptime"><b><?php echo TXT_RUNTIME; ?></b>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $uptime; ?> <span STYLE="font-size: 8px;">(hh:mm)</span></div>
 				<div id="tempgauge"></div>
 				<div id="voltgauge"></div>
 				<div id="clockgauge"></div>
@@ -76,9 +77,8 @@
 				</div>
 		</div>
 
-
 		<script>
-		    var t = new JustGage({
+			var t = new JustGage({
 		    id: "tempgauge",
 		    value: <?php echo $temp; ?>,
 		    min: 0,
@@ -105,7 +105,7 @@
 		    label: "MHz"
 		    });
 
-		    var c = new JustGage({
+		    var u = new JustGage({
 		    id: "cpugauge",
 		    value: <?php echo $cpuusage; ?>,
 		    min: 0,
@@ -113,6 +113,7 @@
 		    title: "<?php echo TXT_USAGE; ?>",
 		    label: "%"
 		    });
-	    </script>
+		</script>
+
 	</body>
 </html>
