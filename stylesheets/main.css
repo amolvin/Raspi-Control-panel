@@ -1,19 +1,13 @@
 body{
 	background: #333333;
 	overflow: hidden;
-}
-
-button{
-	width: 11em;
-	height: 3em;
-	cursor: pointer;
-	text-shadow: 1px 1px 1px #CCCCCC;
+	font-family: sans;
 }
 
 div#container{
-	width: 50em;
-	height: 27.5em;
-	margin: 50px auto 10px auto;
+	width: 800px;
+	height: 400px;
+	margin: 100px auto 10px auto;
 	background: #FFFFFF;
 	border-radius: 10px;
 	box-shadow: 1px 1px 5px #000000;
@@ -21,71 +15,70 @@ div#container{
 
 div#container img#logo{
 	position: relative;
-	top: -2.5em;
+	top: -36px;
 	width: 128px;
+	margin: 0px 0px 0px 50px;
 }
 
 div#container img#loader{
 	position: relative;
-	left: 20em;
+	left: 350px;
 }
 
 div#container p.action{
 	display: block;
 	text-align: center;
-	font-size: 1.5em;
+	font-size: 24px;
 	text-shadow: 1px 1px 2px #000000;
 }
 
 div#container div#title{
 	float: right;
 	font-family: sans;
-	font-size: 2em;
+	font-size: 32px;
 	font-weight: bold;
 	text-shadow: 1px 1px 2px #000000;
-	margin: 1em 3em 1em 0em;
+	margin: 20px 70px 10px 0px;
 	border-bottom: 1px solid #CCCCCC;
 }
 
 div#container div#uptime{
 	display: block;
 	text-align: right;
-	padding: 0px 50px;
 	font-family: sans;
-
+	margin: -50px 70px 50px 0px;
 }
 
 div#container div#tempgauge{
-	position: relative;
-	left: -10em;
-	height: 18em;
+	float: left;
+	margin: -50px 0px 25px 35px;
+	height: 290px;
+	width: 360px;
 }
 
 div#container div#voltgauge{
-	position: relative;
-	left: 6em;
-	top: -16.5em;
-	height: 8em;
+	float: left;
+	margin: -25px 0px 25px 0px;
+	height: 125px;
+	width: 180px;
 }
 
 div#container div#clockgauge{
-	position: relative;
-	left: 6em;
-	top: -17em;
-	height: 8em;
+	float: left;
+	margin: -25px 0px 25px 0px;
+	height: 125px;
+	width: 180px;
 }
 
 div#container div#cpugauge{
-	position: relative;
-	left: 18em;
-	top: -32.5em;
-	height: 8em;
+	float: left;
+	margin: -25px 0px 25px 0px;
+	height: 125px;
+	width: 180px;
 }
 
 div#container div#controls{
-	position: relative;
-	top: -31.5em;
-	left: -2.8em;
+	margin: 0px 64px 0px 0px;
 	float: right;
 	text-align: center;
 }

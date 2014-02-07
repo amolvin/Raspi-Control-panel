@@ -23,6 +23,7 @@
 	$uptime = $uptime[0].', '.$uptime[1];
 
 	include 'localization/'.LANGUAGE.'.lang.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -66,54 +67,70 @@
 		<div id="container">
 				<img id="logo" src="images/raspberry.png">
 				<div id="title">Raspberry Pi Control Panel</div>
-				<div id="uptime"><b><?php echo TXT_RUNTIME; ?></b>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $uptime; ?> <span STYLE="font-size: 8px;">(hh:mm)</span></div>
-				<div id="tempgauge"></div>
-				<div id="voltgauge"></div>
-				<div id="clockgauge"></div>
-				<div id="cpugauge"></div>
+				<?php if(isset($uptime)){ ?>
+					<div id="uptime"><b><?php echo TXT_RUNTIME; ?></b>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $uptime; ?> <span STYLE="font-size: 8px;">(hh:mm)</span></div>
+				<?php } ?>
+
+				<?php if(isset($temp) && is_numeric($temp)){ ?>
+					<div id="tempgauge"></div>
+					<script>
+						var t = new JustGage({
+						    id: "tempgauge",
+						    value: <?php echo $temp; ?>,
+						    min: 0,
+						    max: 100,
+						    title: "<?php echo TXT_TEMPERATURE; ?>",
+						    label: "°C"
+					    });
+					</script>
+				<?php } ?>
+
+				<?php if(isset($voltage) && is_numeric($voltage)){ ?>
+					<div id="voltgauge"></div>
+					<script>
+						var v = new JustGage({
+							id: "voltgauge",
+							value: <?php echo $voltage; ?>,
+							min: 0.8,
+							max: 1.4,
+							title: "<?php echo TXT_VOLTAGE; ?>",
+							label: "V"
+						});
+					</script>
+				<?php } ?>
+
+				<?php if(isset($cpuusage) && is_numeric($cpuusage)){ ?>
+					<div id="cpugauge"></div>
+					<script>
+						var u = new JustGage({
+							id: "cpugauge",
+							value: <?php echo $cpuusage; ?>,
+							min: 0,
+							max: 100,
+							title: "<?php echo TXT_USAGE; ?>",
+							label: "%"
+						});
+					</script>
+				<?php } ?>
+
+				<?php if(isset($clock) && is_numeric($clock)){ ?>
+					<div id="clockgauge"></div>
+					<script>
+						var c = new JustGage({
+							id: "clockgauge",
+							value: <?php echo $clock; ?>,
+							min: 0,
+							max: 1000,
+							title: "<?php echo TXT_CLOCK; ?>",
+							label: "MHz"
+						});
+					</script>
+				<?php } ?>
+
 				<div id="controls">
 					<a class="button_orange" href="modules/shutdown.php?action=0" onclick="return checkAction('<?php echo TXT_RESTART_1; ?>');"><?php echo TXT_RESTART_2; ?></a><br/>
 					<a class="button_red" href="modules/shutdown.php?action=1" onclick="return checkAction('<?php echo TXT_SHUTDOWN_1; ?>');"><?php echo TXT_SHUTDOWN_2; ?></a>
 				</div>
 		</div>
-
-		<script>
-			var t = new JustGage({
-		    id: "tempgauge",
-		    value: <?php echo $temp; ?>,
-		    min: 0,
-		    max: 100,
-		    title: "<?php echo TXT_TEMPERATURE; ?>",
-		    label: "°C"
-		    });
-
-		    var v = new JustGage({
-		    id: "voltgauge",
-		    value: <?php echo $voltage; ?>,
-		    min: 0.8,
-		    max: 1.4,
-		    title: "<?php echo TXT_VOLTAGE; ?>",
-		    label: "V"
-		    });
-
-		    var c = new JustGage({
-		    id: "clockgauge",
-		    value: <?php echo $clock; ?>,
-		    min: 0,
-		    max: 1000,
-		    title: "<?php echo TXT_CLOCK; ?>",
-		    label: "MHz"
-		    });
-
-		    var u = new JustGage({
-		    id: "cpugauge",
-		    value: <?php echo $cpuusage; ?>,
-		    min: 0,
-		    max: 100,
-		    title: "<?php echo TXT_USAGE; ?>",
-		    label: "%"
-		    });
-		</script>
-
 	</body>
 </html>
